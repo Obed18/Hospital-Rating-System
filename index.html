@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0756ad" />
+  <title>Jaggrey's Fertility & Medical Services | Patient Feedback</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="feedback-card" aria-labelledby="page-title">
+      <div class="hero">
+        <div class="hero-orb orb-one"></div>
+        <div class="hero-orb orb-two"></div>
+        <img class="logo" src="assets/jaggreys-logo.jpg" alt="Jaggrey's Fertility & Medical Services" />
+        <div class="eyebrow">PATIENT EXPERIENCE</div>
+        <h1 id="page-title">How was your experience with us today?</h1>
+        <p>Your feedback helps us improve our service<br class="desktop-only"> and patient experience.</p>
+
+        <div class="overall-rating" aria-label="Overall experience rating">
+          <div class="big-stars" id="overallStars">
+            <button type="button" class="big-star" data-value="1" aria-label="1 star">★</button>
+            <button type="button" class="big-star" data-value="2" aria-label="2 stars">★</button>
+            <button type="button" class="big-star" data-value="3" aria-label="3 stars">★</button>
+            <button type="button" class="big-star" data-value="4" aria-label="4 stars">★</button>
+            <button type="button" class="big-star" data-value="5" aria-label="5 stars">★</button>
+          </div>
+          <div class="rating-hint" id="overallHint">Tap a star to rate your overall experience</div>
+        </div>
+      </div>
+
+      <form id="feedbackForm"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST">
+        <input type="hidden" name="overall_rating" id="overallRating" />
+        <input type="hidden" name="form_source" value="Jaggrey's Patient Feedback Website" />
+
+        <section class="section-card staff-card">
+          <div class="section-heading">
+            <span class="heading-icon">♙</span>
+            <div>
+              <span class="section-kicker">STAFF FEEDBACK</span>
+              <h2>Please rate our service</h2>
+            </div>
+          </div>
+
+          <label class="field-label" for="staff">Who would you like to rate?</label>
+          <div class="select-wrap">
+            <select id="staff" name="staff_member" required>
+              <option value="" selected disabled>Select a staff member</option>
+              <!-- Replace these with the hospital's actual staff names. -->
+              <option>Staff Member 1</option>
+              <option>Staff Member 2</option>
+              <option>Staff Member 3</option>
+              <option>Staff Member 4</option>
+              <option>Other / Not sure</option>
+            </select>
+          </div>
+
+          <div class="rating-grid">
+            <div class="rating-row">
+              <div class="criterion"><span class="criterion-icon">♣</span><span>Staff friendliness &amp; courtesy</span></div>
+              <div class="rating-stars" data-field="friendliness" aria-label="Staff friendliness rating"></div>
+            </div>
+            <div class="rating-row">
+              <div class="criterion"><span class="criterion-icon">♙</span><span>Staff professionalism</span></div>
+              <div class="rating-stars" data-field="professionalism" aria-label="Staff professionalism rating"></div>
+            </div>
+            <div class="rating-row">
+              <div class="criterion"><span class="criterion-icon">◷</span><span>Waiting time</span></div>
+              <div class="rating-stars" data-field="waiting_time" aria-label="Waiting time rating"></div>
+            </div>
+            <div class="rating-row">
+              <div class="criterion"><span class="criterion-icon">✚</span><span>Cleanliness &amp; environment</span></div>
+              <div class="rating-stars" data-field="cleanliness" aria-label="Cleanliness rating"></div>
+            </div>
+            <div class="rating-row">
+              <div class="criterion"><span class="criterion-icon">♡</span><span>Overall experience</span></div>
+              <div class="rating-stars" data-field="overall_service" aria-label="Overall service rating"></div>
+            </div>
+          </div>
+
+          <input type="hidden" name="staff_friendliness_courtesy" id="friendliness" required>
+          <input type="hidden" name="staff_professionalism" id="professionalism" required>
+          <input type="hidden" name="waiting_time" id="waiting_time" required>
+          <input type="hidden" name="cleanliness_environment" id="cleanliness" required>
+          <input type="hidden" name="overall_service" id="overall_service" required>
+        </section>
+
+        <section class="section-card">
+          <div class="section-heading compact">
+            <span class="heading-icon">▤</span>
+            <div>
+              <span class="section-kicker">TELL US MORE</span>
+              <h2>What did we do well, or what can we improve?</h2>
+            </div>
+          </div>
+          <textarea name="feedback" maxlength="1500" placeholder="Share your feedback here..."></textarea>
+          <div class="character-count"><span id="count">0</span>/1500</div>
+        </section>
+
+        <section class="section-card recommendation">
+          <div class="section-heading compact">
+            <span class="heading-icon">♥</span>
+            <div><h2>Would you recommend us?</h2></div>
+          </div>
+          <div class="recommend-options">
+            <label class="recommend-option yes">
+              <input type="radio" name="recommend" value="Yes" required>
+              <span class="radio"></span><span>Yes</span>
+            </label>
+            <label class="recommend-option maybe">
+              <input type="radio" name="recommend" value="Maybe">
+              <span class="radio"></span><span>Maybe</span>
+            </label>
+            <label class="recommend-option no">
+              <input type="radio" name="recommend" value="No">
+              <span class="radio"></span><span>No</span>
+            </label>
+          </div>
+        </section>
+
+        <div class="privacy-note">
+          <span>🔒</span>
+          Your feedback is confidential and is used only to improve patient care and service quality.
+        </div>
+
+        <button class="submit-btn" type="submit">
+          <span class="send-icon">➤</span>
+          <span>Submit Feedback</span>
+        </button>
+      </form>
+
+      <footer class="footer">
+        <div class="footer-mark">♡</div>
+        <div>
+          <strong>Thank you for your feedback!</strong>
+          <p>Your opinion is important to us and helps us provide better care and service.</p>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
